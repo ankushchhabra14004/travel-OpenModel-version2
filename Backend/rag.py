@@ -16,7 +16,7 @@ from typing import List
 import faiss
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 from config import (
     EMBEDDING_MODEL_NAME,

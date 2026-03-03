@@ -22,6 +22,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy the backend source (includes pre-built faiss_store/)
 COPY Backend/ .
 
+# Copy scraped visa data (needed if FAISS index must be rebuilt)
+COPY scrapped_results/ /app/scrapped_results/
+
 # Pre-download the sentence-transformers embedding model so the
 # first request is fast even if the HuggingFace cache is cold.
 RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2')"
