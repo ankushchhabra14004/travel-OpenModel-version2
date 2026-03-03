@@ -11,8 +11,8 @@ __pycache__/
 dist/
 build/
 
-# FAISS vector store (auto-rebuilt on startup)
-Backend/faiss_store/
+# FAISS vector store — faiss_store/ IS committed (pre-built for instant deploy)
+# Backend/faiss_store/   ← intentionally tracked
 Backend/vector_store/
 
 # OS

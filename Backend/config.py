@@ -30,4 +30,4 @@ SUPPORTED_COUNTRIES = ["USA", "Singapore", "Qatar"]
 
 # -- Server ---------------------------------------------------------------
 HOST = "0.0.0.0"
-PORT = 8002
+PORT = int(os.environ.get("PORT", 8002))   # Render injects PORT at runtime

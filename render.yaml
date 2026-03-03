@@ -1,0 +1,19 @@
+# Render Infrastructure-as-Code
+# Docs: https://render.com/docs/render-yaml-spec
+#
+# Deploy with: connect this GitHub repo on https://dashboard.render.com
+# and Render will use this file automatically.
+
+services:
+  - type: web
+    name: visa-assistant-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile   # repo root
+    # Render injects PORT automatically; the app reads it from env
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false                # ← you paste this value in the Render dashboard
+    # plan: starter               # 512 MB RAM – uncomment to pin the plan
+    # Render's free tier spins down after 15 min of inactivity.
+    # Upgrade to "Starter" ($7/mo) to keep it always-on.
