@@ -2,9 +2,13 @@
 Configuration for the Visa Assistant Backend.
 """
 import os
+from dotenv import load_dotenv
+
+# Load .env from the project root (one level above Backend/)
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
 
 # -- API Configuration ---------------------------------------------------
-GEMINI_API_KEY = "AIzaSyBbC1w6lsyiic1WqJ0Hn4SrIQ0UY3d6bgs"
+GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 LLM_MODEL = "gemma-3-4b-it"
 
 # -- Local Embedding Model (runs on CPU, zero API limits) ----------------
@@ -19,7 +23,7 @@ FAISS_PERSIST_DIR = os.path.join(BASE_DIR, "faiss_store")
 # -- RAG Configuration ---------------------------------------------------
 CHUNK_SIZE = 1200
 CHUNK_OVERLAP = 200
-RETRIEVAL_TOP_K = 10          # retrieve 10 chunks per query
+RETRIEVAL_TOP_K = 15          # retrieve 10 chunks per query
 
 # -- Supported Countries (folder names inside scrapped_results/) ----------
 SUPPORTED_COUNTRIES = ["USA", "Singapore", "Qatar"]

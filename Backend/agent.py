@@ -398,8 +398,8 @@ If a field was already known and the user did not change it, keep it.
             )
         elif not purpose:
             next_action = (
-                f"NEXT QUESTION: Ask the user about their travel purpose "
-                f"(tourism, business, work, study, etc.). "
+                f"NEXT QUESTION: Ask the user about their purpose of travel "
+                f"(e.g. what brings them to {dest}). "
                 f"We already know: {source} → {dest}. Do NOT ask for destination or source again."
             )
         elif not duration:
@@ -442,7 +442,7 @@ CRITICAL INSTRUCTIONS:
 1. READ the retrieved visa information above CAREFULLY. Your answer MUST be
    based on and cite specifics from this data. Look for visa waiver programs,
    visa-free entry, specific visa categories, fees, validity periods, required
-   documents, and processing times mentioned in the sources.
+   documents, and processing times mentioned in the sources, etc.
 2. If the retrieved data says a country's citizens do NOT need a visa or are
    eligible for visa-free entry or visa waiver, YOU MUST state that clearly.
 3. If the retrieved data mentions specific visa types (B-1, B-2, work permit,
@@ -453,6 +453,19 @@ CRITICAL INSTRUCTIONS:
    processing times, and any special programs from the retrieved data.
 7. ALWAYS end your response with a helpful closing like "What else can I
    help you with?" or "Is there anything else you'd like to know?"
+8. TRAVEL PURPOSE / VISA TYPE RULE — THIS IS MANDATORY:
+   - The user's stated travel purpose is: "{purpose if purpose else 'NOT STATED'}"
+   - IF purpose is "NOT STATED":
+       * DO NOT assume, guess, or default to any single purpose.
+       * Instead, present an OVERVIEW of ALL available visa options found in
+         the retrieved data. Group them by purpose/type and briefly explain
+         each (e.g. "For tourism: ...", "For business: ...", "For work: ...",
+         "For study: ...") based strictly on what the data says.
+       * Tell the user these are the available options and ask which purpose
+         applies to them so you can give more targeted information.
+   - IF purpose IS stated by the user:
+       * Focus your answer EXCLUSIVELY on visa options relevant to that
+         specific purpose. Do not cover unrelated visa types.
 Respond now:"""
         return prompt
 

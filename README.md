@@ -8,15 +8,27 @@
 
 1. **Clone/Download the project**
    ```bash
-   cd "/Users/ankushchhabra/Downloads/Visa Assistant"
+   cd "/path/to/Visa Assistant"
    ```
 
-2. **Install Python dependencies**
+2. **Set up your API key**
+
+   Copy the example env file and add your key:
+   ```bash
+   cp .env.example .env
+   ```
+   Then open `.env` and set:
+   ```
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+   > **Never commit `.env` to version control.** It is already listed in `.gitignore`.
+
+3. **Install Python dependencies**
    ```bash
    pip install fastapi uvicorn streamlit
    pip install langchain-google-genai
    pip install faiss-cpu sentence-transformers
-   pip install requests pydantic
+   pip install requests pydantic python-dotenv
    ```
 
 ## Running the System
