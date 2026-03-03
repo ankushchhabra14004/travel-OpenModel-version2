@@ -1,0 +1,14 @@
+{
+  "country": "Qatar",
+  "url": "https://portal.moi.gov.qa/qatarvisas/",
+  "scrape_time": "2026-02-11T15:52:02.196035",
+  "duration_seconds": 723.9,
+  "statistics": {
+    "total_crawled": 220,
+    "visa_related": 208,
+    "not_visa_related": 12,
+    "api_errors": 14
+  },
+  "total_pages_found": 208,
+  "visa_related_count": 208
+}

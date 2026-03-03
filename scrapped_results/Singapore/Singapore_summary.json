@@ -1,0 +1,14 @@
+{
+  "country": "USA",
+  "url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements?",
+  "scrape_time": "2026-02-11T16:05:37.407849",
+  "duration_seconds": 1539.11,
+  "statistics": {
+    "total_crawled": 427,
+    "visa_related": 427,
+    "not_visa_related": 0,
+    "api_errors": 19
+  },
+  "total_pages_found": 427,
+  "visa_related_count": 427
+}

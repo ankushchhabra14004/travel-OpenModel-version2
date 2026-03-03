@@ -1,0 +1,14 @@
+{
+  "country": "USA",
+  "url": "https://travel.state.gov/content/travel/en/us-visas.html",
+  "scrape_time": "2026-02-09T18:24:42.208035",
+  "duration_seconds": 5930.44,
+  "statistics": {
+    "total_crawled": 269,
+    "visa_related": 267,
+    "not_visa_related": 2,
+    "api_errors": 11
+  },
+  "total_pages_found": 267,
+  "visa_related_count": 267
+}
